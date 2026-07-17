@@ -79,22 +79,11 @@ python app.py
 
 ---
 
-## 📷 Screenshots
 
-Add screenshots here after uploading the project.
-
-Example:
-
-```
-images/
-    home.png
-    prediction.png
-    firebase.png
-```
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - IoT Sensor Integration
 - Weather API Integration
@@ -105,7 +94,7 @@ images/
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Uttam Gupta**
 
