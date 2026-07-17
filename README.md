@@ -4,19 +4,19 @@ An AI-powered Smart Irrigation System that predicts irrigation requirements usin
 
 ---
 
-## 📌 Features
+##  Features
 
-- 🌾 Predicts irrigation requirements using a trained Machine Learning model
-- 💧 Supports climate-based irrigation decision making
-- 🔥 Firebase Realtime Database integration
-- 🌐 Interactive Flask web application
-- 📊 Stores historical irrigation records
-- 📁 Export irrigation data
-- ⚡ Fast and lightweight prediction model
+-  Predicts irrigation requirements using a trained Machine Learning model
+-  Supports climate-based irrigation decision making
+-  Firebase Realtime Database integration
+-  Interactive Flask web application
+-  Stores historical irrigation records
+-  Export irrigation data
+-  Fast and lightweight prediction model
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - Python
 - Flask
@@ -31,7 +31,7 @@ An AI-powered Smart Irrigation System that predicts irrigation requirements usin
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 Climate-Irrigation-System/
@@ -50,47 +50,8 @@ Climate-Irrigation-System/
 └── .gitignore
 ```
 
----
 
-## 🚀 Installation
 
-### Clone the repository
-
-```bash
-git clone https://github.com/UttamGupta-77/Climate-Irrigation-System.git
-```
-
-### Navigate to the project
-
-```bash
-cd Climate-Irrigation-System
-```
-
-### Create a virtual environment
-
-```bash
-python -m venv venv
-```
-
-### Activate the virtual environment
-
-Windows
-
-```bash
-venv\Scripts\activate
-```
-
-Linux / macOS
-
-```bash
-source venv/bin/activate
-```
-
-### Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
 
 ### Firebase Configuration
 
@@ -106,7 +67,7 @@ python app.py
 
 ---
 
-## 📈 Machine Learning Workflow
+##  Machine Learning Workflow
 
 1. Collect irrigation dataset
 2. Preprocess the data
