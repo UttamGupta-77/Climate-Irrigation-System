@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Irrigation Dashboard</title>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #c8e6c9);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 40px;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 85%;
+      max-width: 900px;
+    }
+
+    h1 {
+      color: #2e7d32;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card p {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .status.on {
+      border-left: 5px solid #4caf50;
+      color: #4caf50;
+    }
+
+    .status.off {
+      border-left: 5px solid #f44336;
+      color: #f44336;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #388e3c;
+    }
+
+    canvas {
+      margin-top: 40px;
+      width: 100% !important;
+      height: 400px !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🌦 Smart Irrigation System</h1>
+    <h2>{{ data.city }}</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>🌡 Temperature</h3>
+        <p>{{ data.temperature }} °C</p>
+      </div>
+
+      <div class="card">
+        <h3>💧 Humidity</h3>
+        <p>{{ data.humidity }}%</p>
+      </div>
+
+      <div class="card">
+        <h3>🌱 Soil Moisture</h3>
+        <p>{{ data.soil_moisture }}%</p>
+      </div>
+
+      <div class="card status {{ 'on' if data.irrigation_status == 'ON' else 'off' }}">
+        <h3>🚰 Irrigation Status</h3>
+        <p>{{ data.irrigation_status }}</p>
+      </div>
+    </div>
+
+    <button onclick="location.reload()">🔄 Refresh Data</button>
+
+    <!-- Chart Section -->
+    <canvas id="climateChart"></canvas>
+  </div>
+
+  <script>
+    // Dummy data for visualization — replace later with real-time Firebase data
+    const labels = ['Morning', 'Noon', 'Evening', 'Night'];
+    const tempData = [25, 30, 27, 22];
+    const humidityData = [60, 50, 65, 70];
+    const moistureData = [40, 45, 55, 60];
+
+    const ctx = document.getElementById('climateChart').getContext('2d');
+    const climateChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Temperature (°C)',
+            data: tempData,
+            borderColor: '#ff5722',
+            borderWidth: 2,
+            fill: false,
+            tension: 0.3
+          },
+          {
+            label: 'Humidity (%)',
+            data: humidityData,
+            borderColor: '#2196f3',
+            borderWidth: 2,
+            fill: false,
+            tension: 0.3
+          },
+          {
+            label: 'Soil Moisture (%)',
+            data: moistureData,
+            borderColor: '#4caf50',
+            borderWidth: 2,
+            fill: false,
+            tension: 0.3
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: {
+              font: { size: 14 }
+            }
+          },
+          title: {
+            display: true,
+            text: 'Environmental Conditions Over Time',
+            font: { size: 18 }
+          }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

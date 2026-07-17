@@ -1,0 +1,7 @@
+city,humidity,irrigation_status,soil_moisture,temperature
+Pune,34,OFF,83,26.34
+Pune,34,OFF,62,26.34
+Pune,34,ON,31,26.89
+Pune,46,OFF,44,27.27
+Pune,46,ON,31,27.27
+Pune,46,OFF,86,27.27
