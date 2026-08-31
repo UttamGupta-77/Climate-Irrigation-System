@@ -22,3 +22,6 @@ smartirrigationsystem-*.json
 # OS files
 .DS_Store
 Thumbs.db
+
+# Firebase credentials
+smartirrigationsystem-4b612-firebase-adminsdk-fbsvc-f1f87ff845_new.json
