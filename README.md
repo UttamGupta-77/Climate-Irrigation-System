@@ -97,8 +97,10 @@ python app.py
 ## Author
 
 **Uttam Gupta**
-
 GitHub: https://github.com/UttamGupta-77
+
+**Zoya Pathan**
+GitHub: https://github.com/ZoyaPathan
 
 ---
 
